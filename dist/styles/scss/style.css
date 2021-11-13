@@ -1,0 +1,173 @@
+main h1 {
+  text-align: center;
+}
+
+main .viewChange-btns {
+  margin: 20px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+main .viewChange-btns .horizontalView-btn,
+main .viewChange-btns .verticalView-btn {
+  width: 24px;
+  height: 24px;
+  background-color: #f2f2f2;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  cursor: pointer;
+  padding: 0;
+}
+
+main .viewChange-btns .horizontalView-btn span,
+main .viewChange-btns .verticalView-btn span {
+  display: block;
+  background-color: #ddd;
+}
+
+main .viewChange-btns .horizontalView-btn {
+  margin-right: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+main .viewChange-btns .horizontalView-btn span {
+  height: 3px;
+  width: 16px;
+  margin: 1px 3px;
+}
+
+main .viewChange-btns .verticalView-btn span {
+  width: 8px;
+  height: 8px;
+  float: left;
+}
+
+main .viewChange-btns .verticalView-btn span:nth-child(1) {
+  margin: 2px 1px 1px 2px;
+}
+
+main .viewChange-btns .verticalView-btn span:nth-child(2) {
+  margin: 2px 2px 1px 1px;
+}
+
+main .viewChange-btns .verticalView-btn span:nth-child(3) {
+  margin: 1px 1px 2px 2px;
+}
+
+main .viewChange-btns .verticalView-btn span:nth-child(4) {
+  margin: 1px 2px 2px 1px;
+}
+
+main .table-users {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+main .table-users tr {
+  cursor: move;
+}
+
+main .table-users tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+main .table-users tr:hover {
+  background-color: #ddd;
+}
+
+main .table-users tr th,
+main .table-users tr td {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+main .table-users tr th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #04AA6D;
+  color: white;
+}
+
+main .table-users tr td.user-img {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+main .table-users tr td.user-img img {
+  display: block;
+  height: 100px;
+}
+
+main .table-users.verticalView tbody {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+main .table-users.verticalView tr {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: calc(100% - 40px);
+  margin: 25px 20px;
+}
+
+main .table-users.verticalView tr.tableRow-heading {
+  display: none;
+}
+
+@media screen and (min-width: 425px) {
+  main .table-users.verticalView tr {
+    width: calc(50% - 40px);
+  }
+}
+
+@media screen and (min-width: 576px) {
+  main .table-users.verticalView tr {
+    width: calc(33.33% - 40px);
+  }
+}
+
+@media screen and (min-width: 768px) {
+  main .table-users.verticalView tr {
+    width: calc(25% - 40px);
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  main .table-users.verticalView tr {
+    width: calc(20% - 40px);
+  }
+}
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,160 @@
+// Colors
+$tableEvenRowColor: #f2f2f2;
+$tableRowHowerColor: #ddd;
+$tableHeadingColor: #04AA6D;
+
+// Breakpoints
+$largeup: 1024px;
+$largedown: 1023px;
+
+$smallup: 768px;
+$smalldown: 767px;
+
+$smallerup: 576px;
+$smallerdown: 575px;
+
+$smallestup: 425px;
+$smallestdown: 426px;
+
+//************************************//
+//            Custom Styles
+//************************************//
+main {
+    // Heading
+    h1 {
+        text-align: center;
+    }
+
+    // View Change Btns
+    .viewChange-btns {
+        margin: 20px 0;
+        display: flex;
+        justify-content: flex-end;
+        .horizontalView-btn,
+        .verticalView-btn {
+            width: 24px;
+            height: 24px;
+            background-color: #f2f2f2;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            cursor: pointer;
+            padding: 0;
+
+            span {
+                display: block;
+                background-color: #ddd;
+            }
+        }
+
+        .horizontalView-btn {
+            margin-right: 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            span {
+                height: 3px;
+                width: 16px;
+                margin: 1px 3px;
+            }
+        }
+
+        .verticalView-btn {
+            span {
+                width: 8px;
+                height: 8px;
+                float: left;
+                &:nth-child(1) {
+                    margin: 2px 1px 1px 2px;
+                }
+                &:nth-child(2) {
+                    margin: 2px 2px 1px 1px;
+                }
+                &:nth-child(3) {
+                    margin: 1px 1px 2px 2px;
+                }
+                &:nth-child(4) {
+                    margin: 1px 2px 2px 1px;
+                }
+            }
+        }
+    }
+
+    // Table
+    .table-users {
+        font-family: Arial, Helvetica, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+        tr {
+            cursor: move;
+            &:nth-child(even) {
+                background-color: $tableEvenRowColor;
+            }
+    
+            &:hover {
+                background-color: $tableRowHowerColor;
+            }
+    
+            th,
+            td {
+                border: 1px solid $tableRowHowerColor;
+                padding: 8px;
+            }
+    
+            th {
+                padding-top: 12px;
+                padding-bottom: 12px;
+                text-align: left;
+                background-color: $tableHeadingColor;
+                color: white;
+            }
+    
+            td {
+                &.user-img {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    img {
+                        display: block;
+                        height: 100px;
+                    }
+                }
+            }
+        }
+
+        //***** Vertical view *****//
+        &.verticalView {
+            tbody {
+                display: flex;
+                flex-wrap: wrap;
+            }
+
+            tr {
+                &.tableRow-heading {
+                    display: none;
+                }
+
+                display: flex;
+                flex-direction: column;
+                width: calc(100% - 40px);
+                margin: 25px 20px;
+
+                @media screen and (min-width: $smallestup) {
+                    width: calc(50% - 40px);
+                }
+
+                @media screen and (min-width: $smallerup) {
+                    width: calc(33.33% - 40px);
+                }
+
+                @media screen and (min-width: $smallup) {
+                    width: calc(25% - 40px);
+                }
+
+                @media screen and (min-width: $largeup) {
+                    width: calc(20% - 40px);
+                }
+            }
+        }
+    }
+}
