@@ -7,9 +7,6 @@ main .viewChange-btns {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
 }
 
 main .viewChange-btns .horizontalView-btn,
@@ -77,7 +74,10 @@ main .viewChange-btns .verticalView-btn span:nth-child(4) {
 main .table-users {
   font-family: Arial, Helvetica, sans-serif;
   border-collapse: collapse;
+  display: block;
   width: 100%;
+  overflow: auto;
+  white-space: nowrap;
 }
 
 main .table-users tr {
@@ -92,6 +92,10 @@ main .table-users tr:hover {
   background-color: #ddd;
 }
 
+main .table-users tr.dragging {
+  opacity: 0.5;
+}
+
 main .table-users tr th,
 main .table-users tr td {
   border: 1px solid #ddd;
@@ -102,7 +106,7 @@ main .table-users tr th {
   padding-top: 12px;
   padding-bottom: 12px;
   text-align: left;
-  background-color: #04AA6D;
+  background-color: #fcba03;
   color: white;
 }
 

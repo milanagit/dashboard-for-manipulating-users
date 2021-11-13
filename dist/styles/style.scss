@@ -1,7 +1,11 @@
 // Colors
 $tableEvenRowColor: #f2f2f2;
 $tableRowHowerColor: #ddd;
-$tableHeadingColor: #04AA6D;
+$tableHeadingColor: #fcba03;
+
+$btnContentColor: #ddd;
+$btnBackgroundColor: #f2f2f2;
+$btnBorderColor: #ddd;
 
 // Breakpoints
 $largeup: 1024px;
@@ -29,20 +33,19 @@ main {
     .viewChange-btns {
         margin: 20px 0;
         display: flex;
-        justify-content: flex-end;
         .horizontalView-btn,
         .verticalView-btn {
             width: 24px;
             height: 24px;
-            background-color: #f2f2f2;
-            border: 1px solid #ddd;
+            background-color: $btnBackgroundColor;
+            border: 1px solid $btnBorderColor;
             border-radius: 5px;
             cursor: pointer;
             padding: 0;
 
             span {
                 display: block;
-                background-color: #ddd;
+                background-color: $btnContentColor;
             }
         }
 
@@ -84,7 +87,10 @@ main {
     .table-users {
         font-family: Arial, Helvetica, sans-serif;
         border-collapse: collapse;
+        display: block;
         width: 100%;
+        overflow: auto;
+        white-space: nowrap;
         tr {
             cursor: move;
             &:nth-child(even) {
@@ -93,6 +99,9 @@ main {
     
             &:hover {
                 background-color: $tableRowHowerColor;
+            }
+            &.dragging {
+                opacity: 0.5;
             }
     
             th,
