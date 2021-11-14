@@ -106,6 +106,19 @@ main .searchBar-container .searchBar:focus-visible {
   outline-color: #b5b1b1;
 }
 
+main .usersSelect-container {
+  margin-bottom: 20px;
+}
+
+main .usersSelect-container select {
+  padding: 5px;
+  border: 1px solid #b5b1b1;
+}
+
+main .usersSelect-container select:focus-visible {
+  outline-color: #b5b1b1;
+}
+
 main .table-users {
   font-family: Arial, Helvetica, sans-serif;
   border-collapse: collapse;

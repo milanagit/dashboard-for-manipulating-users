@@ -6,6 +6,8 @@ const verticalViewBtn = document.querySelectorAll('.verticalView-btn');
 const table = document.querySelectorAll('.table-users');
 
 const search = document.getElementById('search');
+const sortDropdown = document.getElementById('usersSelect-dropdown');
+
 const usersArr = [];
 
 //************************************//
@@ -18,6 +20,7 @@ displayUsersFromJSONFile();
 //************************************//
 changeView();
 searchUsers();
+// sortUsers();
 
 //***** Display users from JSON file *****//
 function displayUsersFromJSONFile() {
@@ -28,22 +31,25 @@ function displayUsersFromJSONFile() {
     .then((users) => {
       usersArr.push(...users);
       users.forEach(user => {
-        tableBody.innerHTML = tableBody.innerHTML + '<tr draggable="true">' + 
-                                                      '<td>' + user.firstName + '</td>' +
-                                                      '<td>' + user.lastName + '</td>' +
-                                                      '<td class="user-img">' +
-                                                        '<img src="' + user.picture + '" alt="">' +
-                                                      '</td>' +
-                                                      '<td>' + user.position + '</td>' +
-                                                      '<td>' + user.tasks_xy + '</td>' +
-                                                      '<td>' + user.finishedTasks + '</td>' +
-                                                      '<td>' + user.assignedTasks + '</td>' +
-                                                      '<td>' + user.CVlinkToFile + '</td>' +
-                                                      '<td>' + user.dateStarted + '</td>' +
-                                                    '</tr>';
+        tableBody.innerHTML += `
+                                <tr draggable="true">
+                                  <td> ${user.firstName} </td> 
+                                  <td> ${user.lastName} </td>
+                                  <td class="user-img">
+                                    <img src=" ${user.picture} " alt="">
+                                  </td>
+                                  <td> ${user.position} </td>
+                                  <td> ${user.tasks_xy}% </td>
+                                  <td> ${user.finishedTasks} </td>
+                                  <td> ${user.assignedTasks} </td>
+                                  <td> ${user.CVlinkToFile} </td>
+                                  <td> ${user.dateStarted} </td>
+                                </tr>
+                                `;
       });
       // After DOM is loaded
       dragAndDropUsers();
+      sortUsers();
     });
 }
 
@@ -101,9 +107,9 @@ function searchUsers() {
             user.lastName.match(regex) ||
             user.picture.match(regex) ||
             user.position.match(regex) ||
-            user.tasks_xy.match(regex) ||
-            user.finishedTasks.match(regex) ||
-            user.assignedTasks.match(regex) ||
+            user.tasks_xy.toString().match(regex) ||
+            user.finishedTasks.toString().match(regex) ||
+            user.assignedTasks.toString().match(regex) ||
             user.CVlinkToFile.match(regex) ||
             user.dateStarted.match(regex);
     });
@@ -121,7 +127,7 @@ function searchUsers() {
           <img src=" ${user.picture} " alt="">
         </td>
         <td> ${user.position} </td>
-        <td> ${user.tasks_xy} </td>
+        <td> ${user.tasks_xy}% </td>
         <td> ${user.finishedTasks} </td>
         <td> ${user.assignedTasks} </td>
         <td> ${user.CVlinkToFile} </td>
@@ -138,3 +144,87 @@ function searchUsers() {
   search.addEventListener('keyup', displayMatches);
 
 }
+
+//***** Sort users *****//
+function sortUsers() {
+  // sortUsersByFirstName();
+  // sortUsersByLastName();
+  // sortUsersBySuccessfulness();
+
+  // Sort by first name
+  function sortUsersByFirstName() {
+    return usersArr.sort((a, b) => {
+      if (a.firstName.toLowerCase() < b.firstName.toLowerCase()) return -1;
+      if (a.firstName.toLowerCase() > b.lastName.toLowerCase()) return 1;
+      return 0;
+    });
+  }
+
+  // Sort by last name
+  function sortUsersByLastName() {
+    return usersArr.sort((a, b) => {
+      if (a.lastName.toLowerCase() < b.lastName.toLowerCase()) return -1;
+      if (a.lastName.toLowerCase() > b.lastName.toLowerCase()) return 1;
+      return 0;
+    });
+  }
+
+  // Sort by successfulness
+  function sortUsersBySuccessfulness() {
+    return usersArr.sort((a, b) => {
+      return b.tasks_xy - a.tasks_xy;
+    });
+  }
+
+  // Display sorted users
+  sortDropdown.addEventListener('change', () => {
+    let sortVal = sortDropdown.value;
+
+    
+    // sortUsersByLastName();
+    // sortUsersBySuccessfulness();
+
+    if (sortVal === 'sortByFirstName') {
+      sortUsersByFirstName();
+      renderSortResults();
+    }
+
+    if (sortVal === 'sortByLastName') {
+      sortUsersByLastName();
+      renderSortResults();
+    }
+
+    if (sortVal === 'sortBySuccessfulness') {
+      sortUsersBySuccessfulness();
+      renderSortResults();
+    }
+
+  });
+  
+}
+
+//***** Helper functions *****//
+function renderSortResults() {
+  tableBody.innerHTML = '';
+      usersArr.forEach(user => {
+        tableBody.innerHTML += `
+                                <tr draggable="true">
+                                  <td> ${user.firstName} </td> 
+                                  <td> ${user.lastName} </td>
+                                  <td class="user-img">
+                                    <img src=" ${user.picture} " alt="">
+                                  </td>
+                                  <td> ${user.position} </td>
+                                  <td> ${user.tasks_xy}% </td>
+                                  <td> ${user.finishedTasks} </td>
+                                  <td> ${user.assignedTasks} </td>
+                                  <td> ${user.CVlinkToFile} </td>
+                                  <td> ${user.dateStarted} </td>
+                                </tr>
+                                `;
+      });
+      // After DOM is loaded
+      dragAndDropUsers();
+}
+
+

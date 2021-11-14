@@ -120,6 +120,21 @@ main {
         }
     }
 
+    // Sort dropdown
+    .usersSelect-container {
+        margin-bottom: 20px;
+        select {
+            padding: 5px;
+            border: 1px solid $inputFieldBorderColor;
+            &:focus-visible {
+                outline-color: $inputFieldBorderFocusColor;
+            }
+            option {
+
+            }
+        }
+    }
+
     // Table
     .table-users {
         font-family: Arial, Helvetica, sans-serif;

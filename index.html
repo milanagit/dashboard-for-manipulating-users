@@ -13,6 +13,7 @@
     <main>
         <h1>Dashboard for manipulating users</h1>
 
+        <!-- View change btns -->
         <div class="viewChange-btns">
             <button class="horizontalView-btn">
                 <span></span>
@@ -28,10 +29,22 @@
             </button>
         </div>
 
+        <!-- Search bar -->
         <div class="searchBar-container">
             <input type="text" id="search" class="searchBar" placeholder="Search Users">
         </div>
 
+        <!-- Sort dropdown -->
+        <div class="usersSelect-container">
+            <select name="users" id="usersSelect-dropdown">
+                <option value="selectFilter" selected="selected">Select Filter</option>
+                <option value="sortByFirstName">Sort by first name</option>
+                <option value="sortByLastName">Sort by last name</option>
+                <option value="sortBySuccessfulness">Sort by successfulness</option>
+            </select>
+        </div>
+
+        <!-- Users table -->
         <table class="table-users">
             <thead>
                 <tr class="tableRow-heading">
