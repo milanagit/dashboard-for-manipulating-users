@@ -1,0 +1,68 @@
+[
+    {
+        "firstName": "Ana",
+        "lastName": "Itonishvili",
+        "picture": "dist/images/ana-itonishvili-Fyl8sMC2j2Q-unsplash.jpg",
+        "position": "manager",
+        "tasks_xy": "Tasks x/y %",
+        "finishedTasks": "Finished Taasks",
+        "assignedTasks": "Assigned Tasks",
+        "CVlinkToFile": "CV link to file",
+        "dateStarted": "Date Started"
+    },
+    {
+        "firstName": "Michaela",
+        "lastName": "Dam",
+        "picture": "dist/images/michael-dam-mEZ3PoFGs_k-unsplash.jpg",
+        "position": "hr",
+        "tasks_xy": "Tasks x/y %",
+        "finishedTasks": "Finished Taasks",
+        "assignedTasks": "Assigned Tasks",
+        "CVlinkToFile": "CV link to file",
+        "dateStarted": "Date Started"
+    },
+    {
+        "firstName": "Jozeph",
+        "lastName": "Gonzalez",
+        "picture": "dist/images/joseph-gonzalez-iFgRcqHznqg-unsplash.jpg",
+        "position": "engineer",
+        "tasks_xy": "Tasks x/y %",
+        "finishedTasks": "Finished Taasks",
+        "assignedTasks": "Assigned Tasks",
+        "CVlinkToFile": "CV link to file",
+        "dateStarted": "Date Started"
+    },
+    {
+        "firstName": "Roland",
+        "lastName": "Cousins",
+        "picture": "dist/images/roland-cousins-3GTHyh2lo9o-unsplash.jpg",
+        "position": "architect",
+        "tasks_xy": "Tasks x/y %",
+        "finishedTasks": "Finished Taasks",
+        "assignedTasks": "Assigned Tasks",
+        "CVlinkToFile": "CV link to file",
+        "dateStarted": "Date Started"
+    },
+    {
+        "firstName": "Tyler",
+        "lastName": "Nix",
+        "picture": "dist/images/tyler-nix-X2YO8KFxgEM-unsplash.jpg",
+        "position": "manager",
+        "tasks_xy": "Tasks x/y %",
+        "finishedTasks": "Finished Taasks",
+        "assignedTasks": "Assigned Tasks",
+        "CVlinkToFile": "CV link to file",
+        "dateStarted": "Date Started"
+    },
+    {
+        "firstName": "Jurica",
+        "lastName": "Koletic",
+        "picture": "dist/images/jurica-koletic-7YVZYZeITc8-unsplash.jpg",
+        "position": "manager",
+        "tasks_xy": "Tasks x/y %",
+        "finishedTasks": "Finished Taasks",
+        "assignedTasks": "Assigned Tasks",
+        "CVlinkToFile": "CV link to file",
+        "dateStarted": "Date Started"
+    }
+]
